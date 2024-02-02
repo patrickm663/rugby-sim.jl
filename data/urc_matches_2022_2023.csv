@@ -1,0 +1,152 @@
+Match,Round,Home_Team,Away_Team,Home_Score,Away_Score,Diff,Home_Win,Away_Win,Draw,Home_Country,Away_Country
+1,1,Benetton Rugby,Glasgow Warriors,33,11,22,1,0,0,Italy,Scotland
+2,1,Cardiff Rugby,Munster,20,13,7,1,0,0,Wales,Ireland
+3,1,Lions,Bulls,15,31,-16,0,1,0,South Africa,South Africa
+4,1,Zebre Parma,Leinster,29,33,-4,0,1,0,Italy,Ireland
+5,1,Ulster,Connacht,36,10,26,1,0,0,Ireland,Ireland
+6,1,Scarlets,Ospreys,23,23,0,0,0,1,Wales,Wales
+7,1,Edinburgh Rugby,Dragons RFC,44,6,38,1,0,0,Scotland,Wales
+8,2,Zebre Parma,Sharks,37,42,-5,0,1,0,Italy,South Africa
+9,2,Glasgow Warriors,Cardiff Rugby,52,24,28,1,0,0,Scotland,Wales
+10,2,Leinster,Benetton Rugby,42,10,32,1,0,0,Ireland,Italy
+11,2,Ospreys,Lions,27,28,-1,0,1,0,Wales,South Africa
+12,2,Scarlets,Ulster,39,55,-16,0,1,0,Wales,Ireland
+13,2,Bulls,Edinburgh Rugby,33,31,2,1,0,0,South Africa,Scotland
+14,2,Stormers,Connacht,38,15,23,1,0,0,South Africa,Ireland
+15,2,Dragons RFC,Munster,23,17,6,1,0,0,Wales,Ireland
+16,3,Bulls,Connacht,28,14,14,1,0,0,South Africa,Ireland
+17,3,Ulster,Leinster,13,20,-7,0,1,0,Ireland,Ireland
+18,3,Cardiff Rugby,Lions,18,31,-13,0,1,0,Wales,South Africa
+19,3,Stormers,Edinburgh Rugby,34,18,16,1,0,0,South Africa,Scotland
+20,3,Ospreys,Glasgow Warriors,32,17,15,1,0,0,Wales,Scotland
+21,3,Dragons RFC,Sharks,19,20,-1,0,1,0,Wales,South Africa
+22,3,Munster,Zebre Parma,21,5,16,1,0,0,Ireland,Italy
+23,3,Benetton Rugby,Scarlets,34,23,11,1,0,0,Italy,Wales
+24,4,Edinburgh Rugby,Lions,19,22,-3,0,1,0,Scotland,South Africa
+25,4,Connacht,Munster,20,11,9,1,0,0,Ireland,Ireland
+26,4,Zebre Parma,Stormers,20,37,-17,0,1,0,Italy,South Africa
+27,4,Ulster,Ospreys,47,17,30,1,0,0,Ireland,Wales
+28,4,Leinster,Sharks,54,34,20,1,0,0,Ireland,South Africa
+29,4,Glasgow Warriors,Bulls,35,21,14,1,0,0,Scotland,South Africa
+30,4,Scarlets,Cardiff Rugby,10,16,-6,0,1,0,Wales,Wales
+31,4,Benetton Rugby,Dragons RFC,34,14,20,1,0,0,Italy,Wales
+32,5,Ospreys,Stormers,16,16,0,0,0,1,Wales,South Africa
+33,5,Connacht,Leinster,0,10,-10,0,1,0,Ireland,Ireland
+34,5,Lions,Ulster,37,39,-2,0,1,0,South Africa,Ireland
+35,5,Sharks,Glasgow Warriors,40,12,28,1,0,0,South Africa,Scotland
+36,5,Cardiff Rugby,Dragons RFC,31,14,17,1,0,0,Wales,Wales
+37,5,Scarlets,Zebre Parma,36,12,24,1,0,0,Wales,Italy
+38,5,Munster,Bulls,31,17,14,1,0,0,Ireland,South Africa
+39,5,Edinburgh Rugby,Benetton Rugby,53,8,45,1,0,0,Scotland,Italy
+40,6,Benetton Rugby,Bulls,22,44,-22,0,1,0,Italy,South Africa
+41,6,Connacht,Scarlets,36,14,22,1,0,0,Ireland,Wales
+42,6,Zebre Parma,Edinburgh Rugby,19,38,-19,0,1,0,Italy,Scotland
+43,6,Leinster,Munster,27,13,14,1,0,0,Ireland,Ireland
+44,6,Cardiff Rugby,Stormers,30,24,6,1,0,0,Wales,South Africa
+45,6,Dragons RFC,Ospreys,32,25,7,1,0,0,Wales,Wales
+46,7,Glasgow Warriors,Benetton Rugby,37,0,37,1,0,0,Scotland,Italy
+47,7,Scarlets,Leinster,5,35,-30,0,1,0,Wales,Ireland
+48,7,Lions,Stormers,22,31,-9,0,1,0,South Africa,South Africa
+49,7,Dragons RFC,Zebre Parma,47,7,40,1,0,0,Wales,Italy
+50,7,Munster,Ulster,14,15,-1,0,1,0,Ireland,Ireland
+51,7,Ospreys,Connacht,19,22,-3,0,1,0,Wales,Ireland
+52,7,Cardiff Rugby,Edinburgh Rugby,17,25,-8,0,1,0,Wales,Scotland
+53,7,Bulls,Sharks,40,27,13,1,0,0,South Africa,South Africa
+54,8,Stormers,Scarlets,36,19,17,1,0,0,South Africa,Wales
+55,8,Ulster,Zebre Parma,36,15,21,1,0,0,Ireland,Italy
+56,8,Bulls,Ospreys,43,26,17,1,0,0,South Africa,Wales
+57,8,Benetton Rugby,Edinburgh Rugby,24,17,7,1,0,0,Italy,Scotland
+58,8,Munster,Connacht,24,17,7,1,0,0,Ireland,Ireland
+59,8,Leinster,Glasgow Warriors,40,5,35,1,0,0,Ireland,Scotland
+60,8,Lions,Dragons RFC,33,25,8,1,0,0,South Africa,Wales
+61,8,Sharks,Cardiff Rugby,0,35,-35,0,1,0,South Africa,Wales
+62,9,Sharks,Ospreys,25,10,15,1,0,0,South Africa,Wales
+63,9,Edinburgh Rugby,Munster,17,38,-21,0,1,0,Scotland,Ireland
+64,9,Stormers,Dragons RFC,34,26,8,1,0,0,South Africa,Wales
+65,9,Zebre Parma,Glasgow Warriors,17,45,-28,0,1,0,Italy,Scotland
+66,9,Bulls,Cardiff Rugby,45,9,36,1,0,0,South Africa,Wales
+67,9,Connacht,Benetton Rugby,38,19,19,1,0,0,Ireland,Italy
+68,9,Leinster,Ulster,38,29,9,1,0,0,Ireland,Ireland
+69,9,Lions,Scarlets,32,15,17,1,0,0,South Africa,Wales
+70,10,Sharks,Lions,37,10,27,1,0,0,South Africa,South Africa
+71,10,Stormers,Bulls,37,27,10,1,0,0,South Africa,South Africa
+72,10,Glasgow Warriors,Edinburgh Rugby,16,10,6,1,0,0,Scotland,Scotland
+73,10,Connacht,Ulster,20,22,-2,0,1,0,Ireland,Ireland
+74,10,Benetton Rugby,Zebre Parma,38,5,33,1,0,0,Italy,Italy
+75,10,Dragons RFC,Cardiff Rugby,24,29,-5,0,1,0,Wales,Wales
+76,10,Munster,Leinster,19,20,-1,0,1,0,Ireland,Ireland
+77,10,Ospreys,Scarlets,34,14,20,1,0,0,Wales,Wales
+78,11,Edinburgh Rugby,Glasgow Warriors,25,32,-7,0,1,0,Scotland,Scotland
+79,11,Sharks,Bulls,47,20,27,1,0,0,South Africa,South Africa
+80,11,Zebre Parma,Benetton Rugby,17,40,-23,0,1,0,Italy,Italy
+81,11,Stormers,Lions,40,8,32,1,0,0,South Africa,South Africa
+82,11,Ulster,Munster,14,15,-1,0,1,0,Ireland,Ireland
+83,11,Leinster,Connacht,41,12,29,1,0,0,Ireland,Ireland
+84,11,Scarlets,Dragons RFC,33,17,16,1,0,0,Wales,Wales
+85,11,Cardiff Rugby,Ospreys,19,22,-3,0,1,0,Wales,Wales
+86,12,Dragons RFC,Bulls,14,29,-15,0,1,0,Wales,South Africa
+87,12,Munster,Lions,33,3,30,1,0,0,Ireland,South Africa
+88,12,Cardiff Rugby,Scarlets,22,28,-6,0,1,0,Wales,Wales
+89,12,Edinburgh Rugby,Zebre Parma,24,17,7,1,0,0,Scotland,Italy
+90,12,Benetton Rugby,Ulster,31,29,2,1,0,0,Italy,Ireland
+91,12,Connacht,Sharks,24,12,12,1,0,0,Ireland,South Africa
+92,12,Ospreys,Leinster,19,24,-5,0,1,0,Wales,Ireland
+93,12,Glasgow Warriors,Stormers,24,17,7,1,0,0,Scotland,South Africa
+94,13,Scarlets,Bulls,37,28,9,1,0,0,Wales,South Africa
+95,13,Ulster,Stormers,35,5,30,1,0,0,Ireland,South Africa
+96,13,Benetton Rugby,Munster,30,40,-10,0,1,0,Italy,Ireland
+97,13,Dragons RFC,Glasgow Warriors,30,42,-12,0,1,0,Wales,Scotland
+98,13,Edinburgh Rugby,Sharks,19,22,-3,0,1,0,Scotland,South Africa
+99,13,Connacht,Lions,43,24,19,1,0,0,Ireland,South Africa
+100,13,Leinster,Cardiff Rugby,38,14,24,1,0,0,Ireland,Wales
+101,13,Zebre Parma,Ospreys,24,28,-4,0,1,0,Italy,Wales
+102,1,Sharks,Stormers,19,46,-27,0,1,0,South Africa,South Africa
+103,14,Munster,Ospreys,58,3,55,1,0,0,Ireland,Wales
+104,14,Glasgow Warriors,Ulster,17,11,6,1,0,0,Scotland,Ireland
+105,14,Zebre Parma,Connacht,34,57,-23,0,1,0,Italy,Ireland
+106,14,Lions,Sharks,7,29,-22,0,1,0,South Africa,South Africa
+107,14,Bulls,Stormers,19,23,-4,0,1,0,South Africa,South Africa
+108,14,Leinster,Dragons RFC,43,14,29,1,0,0,Ireland,Wales
+109,14,Scarlets,Edinburgh Rugby,42,147,-105,0,1,0,Wales,Scotland
+110,14,Cardiff Rugby,Benetton Rugby,30,13,17,1,0,0,Wales,Italy
+111,6,Sharks,Ulster,24,31,-7,0,1,0,South Africa,Ireland
+112,6,Lions,Glasgow Warriors,35,24,11,1,0,0,South Africa,Scotland
+113,15,Glasgow Warriors,Zebre Parma,50,8,42,1,0,0,Scotland,Italy
+114,15,Munster,Scarlets,49,42,7,1,0,0,Ireland,Wales
+115,15,Stormers,Sharks,29,23,6,1,0,0,South Africa,South Africa
+116,15,Bulls,Lions,25,29,-4,0,1,0,South Africa,South Africa
+117,15,Dragons RFC,Connacht,20,22,-2,0,1,0,Wales,Ireland
+118,15,Cardiff Rugby,Ulster,20,42,-22,0,1,0,Wales,Ireland
+119,15,Ospreys,Benetton Rugby,20,21,-1,0,1,0,Wales,Italy
+120,15,Edinburgh Rugby,Leinster,27,47,-20,0,1,0,Scotland,Ireland
+121,16,Leinster,Stormers,22,22,0,0,0,1,Ireland,South Africa
+122,16,Zebre Parma,Cardiff Rugby,30,34,-4,0,1,0,Italy,Wales
+123,16,Benetton Rugby,Lions,28,32,-4,0,1,0,Italy,South Africa
+124,16,Ulster,Bulls,32,23,9,1,0,0,Ireland,South Africa
+125,16,Ospreys,Dragons RFC,37,18,19,1,0,0,Wales,Wales
+126,16,Munster,Glasgow Warriors,26,38,-12,0,1,0,Ireland,Scotland
+127,16,Connacht,Edinburgh Rugby,41,26,15,1,0,0,Ireland,Scotland
+128,16,Scarlets,Sharks,32,20,12,1,0,0,Wales,South Africa
+129,17,Sharks,Benetton Rugby,43,33,10,1,0,0,South Africa,Italy
+130,17,Glasgow Warriors,Scarlets,12,9,3,1,0,0,Scotland,Wales
+131,17,Ulster,Dragons RFC,40,19,21,1,0,0,Ireland,Wales
+132,17,Lions,Leinster,36,39,-3,0,1,0,South Africa,Ireland
+133,17,Bulls,Zebre Parma,78,12,66,1,0,0,South Africa,Italy
+134,17,Stormers,Munster,24,26,-2,0,1,0,South Africa,Ireland
+135,17,Edinburgh Rugby,Ospreys,45,21,24,1,0,0,Scotland,Wales
+136,17,Connacht,Cardiff Rugby,38,19,19,1,0,0,Ireland,Wales
+137,18,Stormers,Benetton Rugby,38,22,16,1,0,0,South Africa,Italy
+138,18,Ulster,Edinburgh Rugby,28,14,14,1,0,0,Ireland,Scotland
+139,18,Lions,Zebre Parma,50,35,15,1,0,0,South Africa,Italy
+140,18,Dragons RFC,Scarlets,31,14,17,1,0,0,Wales,Wales
+141,18,Bulls,Leinster,62,7,55,1,0,0,South Africa,Ireland
+142,18,Sharks,Munster,22,22,0,0,0,1,South Africa,Ireland
+143,18,Ospreys,Cardiff Rugby,21,38,-17,0,1,0,Wales,Wales
+144,18,Glasgow Warriors,Connacht,29,27,2,1,0,0,Scotland,Ireland
+145,QF,Ulster,Connacht,10,15,-5,0,1,0,Ireland,Ireland
+146,QF,Stormers,Bulls,33,21,12,1,0,0,South Africa,South Africa
+147,QF,Leinster,Sharks,35,5,30,1,0,0,Ireland,South Africa
+148,QF,Glasgow Warriors,Munster,5,14,-9,0,1,0,Scotland,Ireland
+149,SF,Stormers,Connacht,43,25,18,1,0,0,South Africa,Ireland
+150,SF,Leinster,Munster,15,16,-1,0,1,0,Ireland,Ireland
+151,F,Stormers,Munster,14,19,-5,0,1,0,South Africa,Ireland
