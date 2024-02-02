@@ -128,7 +128,7 @@ simulate_matches = rugby_matches(matches.Home_Team, matches.Away_Team, matches.D
 # ╔═╡ 71cbf417-b1f2-4cee-a226-69d63c78b779
 match_sample = Turing.sample(
 	simulate_matches, 
-	NUTS(0.6; adtype=AutoForwardDiff(; chunksize=0)),
+	NUTS(0.45; adtype=AutoForwardDiff(; chunksize=0)),
 	5_000; 
 	discard_adapt=false)
 
@@ -233,31 +233,83 @@ mean(match_sim_2.diff)
 
 # ╔═╡ 45b8944f-6634-4877-b110-8f98f651924b
 begin
-	density(teams_att[12], label = "Attack")
-	density!(teams_def[12], label = "Defence")
+	density(teams_att[team_dict["Lions"]], label = "Lions: Attack")
+	density!(teams_def[team_dict["Lions"]], label = "Lions: Defence")
+	density!(teams_att[team_dict["Bulls"]], label = "Bulls: Attack")
+	density!(teams_def[team_dict["Bulls"]], label = "Bulls: Defence")
 end
 
-# ╔═╡ 762c52cc-669e-4d82-980f-aecc88bb7f2d
-matches[matches.Home_Team .== "Sharks" .&& matches.Away_Team .== "Lions", :]
-
-# ╔═╡ c58dbcfd-3965-4dd0-b4d3-db339f71a194
-begin
-	pred_diff = Vector{Float64}(undef, size(matches)[1])
-	for i ∈ 1:size(matches)[1]
-		get_home = matches[i, :Home_Team]
-		get_away = matches[i, :Away_Team]
-		pred_diff[i] =  mean(simulate_matches__(teams_att[team_dict[get_home]], teams_def[team_dict[get_home]], teams_att[team_dict[get_away]], teams_def[team_dict[get_away]], global_sd, post_home, 5_000_000; zipped=false).diff)
+# ╔═╡ 4125bdac-7093-424e-9a03-1571c2b95a0a
+function make_predictions(m, n)
+	pred_diff = Vector{Float64}(undef, size(m)[1])
+	for i ∈ 1:size(m)[1]
+		get_home = m[i, :Home_Team]
+		get_away = m[i, :Away_Team]
+		pred_diff[i] =  mean(simulate_matches__(teams_att[team_dict[get_home]], teams_def[team_dict[get_home]], teams_att[team_dict[get_away]], teams_def[team_dict[get_away]], global_sd, post_home, n; zipped=false).diff)
 	end
+	return round.(pred_diff)
 end
+
+# ╔═╡ 1d197050-98ac-4c61-8e59-dfb42eef5dec
+pred_diff = make_predictions(matches, 1_000_000)
 
 # ╔═╡ 5cfe65ae-86d6-46ba-930e-c94437a81381
 begin
-	scatter(matches.Diff, pred_diff, xlab = "True Difference", ylab = "Predicted Difference", xlim = (-30, 65), ylim = (-30, 65), label = false)
+	scatter(matches.Diff, pred_diff, xlab = "True Point Difference", ylab = "Predicted Point Difference", xlim = (-30, 65), ylim = (-30, 65), label = false)
 	plot!(-30:65, -30:65, width = 2, color = :black, label = false)
 end 
 
 # ╔═╡ f85b174d-1d75-4887-846e-fdcaa4773bb8
 sqrt(mean(((matches.Diff .- pred_diff) .^ 2)))
+
+# ╔═╡ 64262391-30f8-42f0-ad84-88cbf3e7f20f
+function make_league_table(m; prediction=false, n=100)
+	matches = m[m.Round .!= "QF" .&& m.Round .!= "SF" .&& m.Round .!= "F", :]
+	if prediction == true
+		matches.Diff = make_predictions(matches, n)
+	end
+	league_table = DataFrame(
+		Position=[],
+		Team=[],
+		Played=[],
+		Won=[],
+		Loss=[],
+		Draw=[],
+		PD=[],
+		Points=[]
+	)
+	position_ = 0
+	for team_ ∈ unique(matches.Home_Team)
+		played_ = size(matches[matches.Home_Team .== team_, :])[1]
+		won_ = size(matches[matches.Home_Team .== team_ .&& matches.Diff .> 0, :])[1]
+		loss_ = size(matches[matches.Home_Team .== team_ .&& matches.Diff .< 0, :])[1]
+		draw_ = size(matches[matches.Home_Team .== team_ .&& matches.Diff .== 0, :])[1]
+		gd_ = sum(matches[matches.Home_Team .== team_, :Diff])
+		
+		played_ = played_ + size(matches[matches.Away_Team .== team_, :])[1]
+		won_ = won_ + size(matches[matches.Away_Team .== team_ .&& matches.Diff .< 0, :])[1]
+		loss_ = loss_ + size(matches[matches.Away_Team .== team_ .&& matches.Diff .> 0, :])[1]
+		draw_ = draw_ + size(matches[matches.Away_Team .== team_ .&& matches.Diff .== 0, :])[1]
+		gd_ = gd_ - sum(matches[matches.Away_Team .== team_, :Diff])
+		
+		position_ = position_ + 1
+		points_ = 4 * won_ + 2 * draw_
+		table_line = [position_, team_, played_, won_, loss_, draw_, Int(gd_), points_]
+		push!(league_table, table_line)
+	end
+	sort!(league_table, [:Points, :PD], rev = true)
+	league_table.Position = 1:size(league_table)[1]
+	return league_table
+end
+
+# ╔═╡ 743db52e-50f9-4d7e-8911-5b2a4c75ffcb
+print(make_league_table(matches))
+
+# ╔═╡ f21d54de-cbc0-451b-bea2-985f63f3a23d
+print(make_league_table(matches; prediction=true, n=1_000_000))
+
+# ╔═╡ fd5c1556-9004-4e67-978c-d4ae1ab50109
+
 
 # ╔═╡ Cell order:
 # ╠═b2eb6954-c1a6-11ee-05e9-f1129ba3294f
@@ -295,7 +347,11 @@ sqrt(mean(((matches.Diff .- pred_diff) .^ 2)))
 # ╠═df201c22-042c-48ef-a378-8270f6d3c80c
 # ╠═140c0fa7-2744-4ee3-b1d5-28209890d11e
 # ╠═45b8944f-6634-4877-b110-8f98f651924b
-# ╠═762c52cc-669e-4d82-980f-aecc88bb7f2d
-# ╠═c58dbcfd-3965-4dd0-b4d3-db339f71a194
+# ╠═4125bdac-7093-424e-9a03-1571c2b95a0a
+# ╠═1d197050-98ac-4c61-8e59-dfb42eef5dec
 # ╠═5cfe65ae-86d6-46ba-930e-c94437a81381
 # ╠═f85b174d-1d75-4887-846e-fdcaa4773bb8
+# ╠═64262391-30f8-42f0-ad84-88cbf3e7f20f
+# ╠═743db52e-50f9-4d7e-8911-5b2a4c75ffcb
+# ╠═f21d54de-cbc0-451b-bea2-985f63f3a23d
+# ╠═fd5c1556-9004-4e67-978c-d4ae1ab50109
