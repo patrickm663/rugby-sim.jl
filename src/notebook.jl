@@ -219,8 +219,11 @@ mean(match_sim.diff)
 # ╔═╡ 772c26ff-ea8d-40c2-9350-74f2b683ebec
 team_list = unique(matches.Home_Team)
 
+# ╔═╡ de4e2a3c-d737-4a81-a801-f2d159dc1272
+team_dict["Sharks"]
+
 # ╔═╡ 76de30de-5eec-4391-93da-1c897a4ec959
-match_sim_2 = simulate_matches__(teams_att[12], teams_def[12], teams_att[4], teams_def[4], global_sd, post_home, 1_000_000; zipped=false)
+match_sim_2 = simulate_matches__(teams_att[team_dict["Sharks"]], teams_def[team_dict["Sharks"]], teams_att[team_dict["Lions"]], teams_def[team_dict["Lions"]], global_sd, post_home, 1_000_000; zipped=false)
 
 # ╔═╡ df201c22-042c-48ef-a378-8270f6d3c80c
 density(match_sim_2.diff)
@@ -233,6 +236,28 @@ begin
 	density(teams_att[12], label = "Attack")
 	density!(teams_def[12], label = "Defence")
 end
+
+# ╔═╡ 762c52cc-669e-4d82-980f-aecc88bb7f2d
+matches[matches.Home_Team .== "Sharks" .&& matches.Away_Team .== "Lions", :]
+
+# ╔═╡ c58dbcfd-3965-4dd0-b4d3-db339f71a194
+begin
+	pred_diff = Vector{Float64}(undef, size(matches)[1])
+	for i ∈ 1:size(matches)[1]
+		get_home = matches[i, :Home_Team]
+		get_away = matches[i, :Away_Team]
+		pred_diff[i] =  mean(simulate_matches__(teams_att[team_dict[get_home]], teams_def[team_dict[get_home]], teams_att[team_dict[get_away]], teams_def[team_dict[get_away]], global_sd, post_home, 5_000_000; zipped=false).diff)
+	end
+end
+
+# ╔═╡ 5cfe65ae-86d6-46ba-930e-c94437a81381
+begin
+	scatter(matches.Diff, pred_diff, xlab = "True Difference", ylab = "Predicted Difference", xlim = (-30, 65), ylim = (-30, 65), label = false)
+	plot!(-30:65, -30:65, width = 2, color = :black, label = false)
+end 
+
+# ╔═╡ f85b174d-1d75-4887-846e-fdcaa4773bb8
+sqrt(mean(((matches.Diff .- pred_diff) .^ 2)))
 
 # ╔═╡ Cell order:
 # ╠═b2eb6954-c1a6-11ee-05e9-f1129ba3294f
@@ -265,7 +290,12 @@ end
 # ╠═6307d3a0-c189-45cd-99ad-3f62702dd728
 # ╠═6cdcefb0-0e56-4b2f-a546-626e16fee088
 # ╠═772c26ff-ea8d-40c2-9350-74f2b683ebec
+# ╠═de4e2a3c-d737-4a81-a801-f2d159dc1272
 # ╠═76de30de-5eec-4391-93da-1c897a4ec959
 # ╠═df201c22-042c-48ef-a378-8270f6d3c80c
 # ╠═140c0fa7-2744-4ee3-b1d5-28209890d11e
 # ╠═45b8944f-6634-4877-b110-8f98f651924b
+# ╠═762c52cc-669e-4d82-980f-aecc88bb7f2d
+# ╠═c58dbcfd-3965-4dd0-b4d3-db339f71a194
+# ╠═5cfe65ae-86d6-46ba-930e-c94437a81381
+# ╠═f85b174d-1d75-4887-846e-fdcaa4773bb8
