@@ -90,7 +90,7 @@ team_dict
 # ╔═╡ d46e802c-25b8-47f3-b7c6-2f5161b3bce0
 @model function rugby_matches(home_teams, away_teams, diff, dict, ::Type{T} = Float64) where {T}
     # Hyper priors
-    z = zeros(length(team_dict))
+    z = zeros(length(dict))
 	σatt ~ Exponential(1)
     σdef ~ Exponential(1)
     μatt ~ MvNormal(z, 0.1 * I)
